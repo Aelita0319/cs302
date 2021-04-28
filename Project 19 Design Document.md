@@ -10,6 +10,8 @@ In Linux operating system, it is important to know how to check the resource usa
 
 Linux already has many commends that can show the usage of resources such as free, top and vmstat, which can show different types of recources. They can be approriate reference object of our design.
 
+//free, top, vmstat 等
+
 ## Description
 
 This project is to develop a tool for memory usage on the Linux platform. It can display the memory usage of the process you want to observe and possible memory leaks in real time, which is similar to the task manager of Windows. User can single invoke the tool with the arguments(if any) in the terminal and then it will quickly inform user the statistic they want to know. User can also keep runnning the tool so that the tool will update memory usage in real time.
@@ -22,6 +24,20 @@ If the user specifies the process ID, it will display the detailed resource usag
 
 ## Implementation
 
+We decide to write a C file. 
+
+The function of the file.
+
+
+1. read_args()
+2. show_all_process()
+3. sort_all_process()
+4. show_single_process(int pid)
+5. show_threads(int pid)
+6. show_allocation(int pid)
+7. show_release(int pid)
+8. detect_leak(int pid)
+
 
 
 ## Expected goals
@@ -33,3 +49,8 @@ If the user specifies the process ID, it will display the detailed resource usag
 - (Optional) Analyze whether there is memory leaks in the specific process.
 
 ## Division of Labor
+
+| 程蕴玉                                             | 郝欣晨                                 |
+| -------------------------------------------------- | -------------------------------------- |
+| Flow control and function of handling all process. | Function of handling a single process. |
+
