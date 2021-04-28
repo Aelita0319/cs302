@@ -6,7 +6,7 @@
 
 ## Background
 
-Develop a tool on the Linux platform.
+Develop a tool for memory usage on the Linux platform.
 
 ## Description
 
