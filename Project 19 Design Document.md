@@ -8,9 +8,13 @@
 
 In Linux operating system, it is important to know how to check the resource usage of the system including memory, CPU and hard disk. This can help us better understand the operation of each program. If an application or program occupies too many resources, it will affect the execution of the system. We should fix this problem and optimize it. In this case, a favorable tool which can statistic the memory usage in real-time will be needed.
 
-Linux already has many commends that can show the usage of resources such as free, top and vmstat, which can show different types of recources. They can be approriate reference object of our design.
+Linux already has many commends that can show the usage of resources such as `free`, `top` and `vmstat`, which can show different types of recources. All of them have similarities to the functions we want to achieve therefore they might be good reference object of our design.
 
-//free, top, vmstat 等
+The `free` command provides information about the total amount of the physical and swap memory, as well as the free and used memory. When used without any option, the `free` command will display information about the memory and swap in kibibyte. 1 kibibyte (KiB) is 1024 bytes.
+
+The `top` command is a commonly used performance analysis tool under Linux, which can display the resource occupancy status of each process in the system in real time, similar to the task manager of Windows.
+
+The `Vmstat` is the abbreviation of Virtual Meomory Statistics (virtual memory statistics), which can dynamically monitor the virtual memory, process, and CPU activities of the operating system in real time.
 
 ## Description
 
@@ -24,7 +28,7 @@ If the user specifies the process ID, it will display the detailed resource usag
 
 ## Implementation
 
-We decide to write a C file. 
+We decide to write a C file that can be executed directly.
 
 The function of the file.
 
@@ -42,11 +46,18 @@ The function of the file.
 
 ## Expected goals
 
-- Statistic the memory usage of the entire system and sort it.
-- Statistic the memory usage of the entire system and sort it in real time.
-- Statistic the memory usage of a specific process and the threads belonging to it.
-- Detect the memory allocation and release for a specific process.
+- For a single call, the program only show real-time analysis results once.
+
+- For the continuous call, the program will monitor the usage until exiting and refresh results regularly.
+
 - (Optional) Analyze whether there is memory leaks in the specific process.
+
+  |                  | Single Call                                                  | Continuous Call                                              |
+  | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | All processes    | Statistic the memory usage of the entire system and sort it. | Monitor the memory usage of the entire system and sort it.   |
+  | Specific process | 1. Statistic the memory usage of itself and the threads belonging to it. 2. Detect the memory allocation and release. | 1. Monitor the memory usage of itself and the threads belonging to it. 2. Detect the memory allocation and release. |
+
+  
 
 ## Division of Labor
 
