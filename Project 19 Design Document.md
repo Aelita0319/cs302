@@ -35,19 +35,19 @@ The function of the file.
 
 1. read_args()               
    Read args and decide which function to go
-3. show_all_process()
+3. show_all_process()  
    Print all the memory usage of all the current process in the system
-4. sort_all_process()
+4. sort_all_process()  
    Sort the memory usage of the current process
-5. show_single_process(int pid)
+5. show_single_process(int pid)  
    Print the memory usage of the process with the income pid
-6. show_threads(int pid)
+6. show_threads(int pid)  
    Print the memory usage of threads of the process with the income pid
-7. show_allocation(int pid)
+7. show_allocation(int pid)  
    Print the memory allocation of the process with the income pid
-8. show_release(int pid)
+8. show_release(int pid)  
    Print the memory release of the process with the income pid
-9. detect_leak(int pid)
+9. detect_leak(int pid)  
    Statistic process memory allocation and release, check if there is a leak 
 
 
